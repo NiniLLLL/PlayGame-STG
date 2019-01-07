@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#canvas{
+			border: 1px solid black;
+		}
+		body{
+			margin-left: 0;
+			margin-top:0;
+		}
+	</style>
+	<script type="text/javascript" src="../js/prop/initprop.js"></script>
+	<script type="text/javascript" src="../js/prop/paddle.js"></script>
+	<script type="text/javascript" src="../js/prop/ball.js"></script>
+	<script type="text/javascript" src="../js/prop/block.js"></script>
+	<script type="text/javascript" src="../js/tool/collined.js"></script>
+	<script type="text/javascript" src="../js/game/mainGame.js"></script>
+	<script type="text/javascript" src="../js/checkpoint/levels.js"></script>
+	<script type="text/javascript" src="../js/scene/initScene.js"></script>
+	<script type="text/javascript" src="../js/scene/mainScene.js"></script>	
+	<script type="text/javascript" src="../js/scene/titleScene.js"></script>
+	<script type="text/javascript" src="../js/scene/endScene.js"></script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="400"></canvas>
+	<div>
+		<textarea id="text-log" rows="20" cols="50"></textarea>
+	</div>
+</body>
+<script type="text/javascript">
+
+// var e = sel => document.querySelector(sel)
+
+// 打印日志函数
+var log = console.log.bind(console)
+
+//入口
+var __main = function () {
+
+	var images = {
+		ball:'../imgs/ball.png',
+		paddle:'../imgs/dang.png',
+		block:'../imgs/block.png',
+	}
+	var game = new guaGame(images,function (g) {
+		var scene = new titleScene(g)
+		g.runWithScene(scene)
+	})
+
+}
+__main()
+
+</script>
+</html>
